@@ -1,0 +1,36 @@
+diff --git a/node_modules/swapi-ts/dist/SWApi.js b/node_modules/swapi-ts/dist/SWApi.js
+index fab6cac..e46918e 100644
+--- a/node_modules/swapi-ts/dist/SWApi.js
++++ b/node_modules/swapi-ts/dist/SWApi.js
+@@ -34,10 +34,10 @@ class Resource {
+     }
+     async populateSingle(path, obj) {
+         if (Array.isArray(obj[path])) {
+-            obj[path] = await Promise.all(obj[path].map(url => request(url.replace('http', 'https'))));
++            obj[path] = await Promise.all(obj[path].map(url => request(url)));
+             return this;
+         }
+-        obj[path] = await request(obj[path].replace('http', 'https'));
++        obj[path] = await request(obj[path]);
+         return this;
+     }
+     populateRec(path, obj) {
+diff --git a/node_modules/swapi-ts/src/SWApi.ts b/node_modules/swapi-ts/src/SWApi.ts
+index a240a0a..9d995de 100644
+--- a/node_modules/swapi-ts/src/SWApi.ts
++++ b/node_modules/swapi-ts/src/SWApi.ts
+@@ -147,12 +147,12 @@ class Resource < S > {
+ 
+   private async populateSingle(path: string, obj: any) {
+     if (Array.isArray(obj[path])) {
+-      obj[path] = await Promise.all((obj[path] as string[]).map(url => request(url.replace('http', 'https'))));
++      obj[path] = await Promise.all((obj[path] as string[]).map(url => request(url)));
+ 
+       return this;
+     }
+ 
+-    obj[path] = await request((obj[path] as string).replace('http', 'https'));
++    obj[path] = await request(obj[path] as string);
+ 
+     return this;
+   }
