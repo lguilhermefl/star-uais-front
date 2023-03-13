@@ -104,10 +104,8 @@ const callback: CallbackTypes.CredentialCallback = (response) => {
 }
 
 .btn-auth:disabled {
-  pointer-events: none;
   background-color: rgb(232, 237, 235);
   border-color: rgb(193, 199, 198);
   color: rgb(136, 147, 151);
-  cursor: not-allowed;
 }
 </style>
