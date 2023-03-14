@@ -5,10 +5,10 @@ import { RouterLink } from 'vue-router'
   <header>
     <RouterLink to="/home">
       <img alt="Star Uais logo" class="logo" src="@/assets/logo.svg" />
-      <div>
-        <h1 class="heading">Pensa num trem bão cheio de informações para os fãs de Star Wars!</h1>
-      </div>
     </RouterLink>
+    <div>
+      <h1 class="heading">Pensa num trem bão cheio de informações para os fãs de Star Wars!</h1>
+    </div>
   </header>
 </template>
 
@@ -16,10 +16,12 @@ import { RouterLink } from 'vue-router'
 header {
   width: 100%;
   display: flex;
-  place-items: center;
+  justify-content: center;
+  align-items: center;
   gap: 50px;
   margin-bottom: 2rem;
 }
+
 .logo {
   max-height: 70px;
 }
