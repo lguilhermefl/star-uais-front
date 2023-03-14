@@ -17,71 +17,31 @@
       <p>É um período de muita informação.</p>
 
       <p>
-        This is a demonstration of Star Wars-style scrolling 3D titles in CSS3. It possibly has no
-        practical purpose whatsoever but it looks great and you can impress your friends.
+        Aqui você encontrará o maior acervo de informações sobre a sequência de filmes originais de
+        Star Wars.
       </p>
 
       <p>
-        Before movie-buffs start ranting, I realize Star Wars wasn't the first to use crawling 3D
-        titles, but few of you will remember the Flash Gordon series or the 1936 adaption of HG
-        Wells' "Things to Come".
+        Uma lista com os todos os detalhes de cada filme lançado, como diretor, data de lançamento e
+        texto de abertura!
       </p>
 
       <p>
-        Also, by mentioning "Star Wars", everyone will understand what I mean. And I'll receive
-        several thousand more visits.
+        Também é possível ter acesso a uma lista com todos os personagens que apareceram nos 6
+        filmes e suas características individuais.
       </p>
 
       <p>
-        The scrolling titles work well in Chrome, Safari and Firefox. Opera doesn't implement 3D
-        transforms yet, but the text will scroll. IE users receive a blank page. A shame, but IE10
-        should support it.
+        Além disso, ainda tem muito mais, como a lista de planetas, espécies, naves e veículos. Tudo
+        isso bem detalhado para quem é fã de verdade!
       </p>
+
+      <p>Está esperando o quê pra se cadastrar sô?</p>
+
+      <p class="center">Venha para o lado da força, jovem Padawan!</p>
 
       <p>
-        So how does it work? Well, it's fairly simple. We have an outer absolute DIV (#titles) which
-        is rotated along the X-axis using perspective to give the impression of depth. The same DIV
-        also has an :after psuedo-element which applies a linear gradient so the text appears to
-        fade out.
-      </p>
-
-      <p>
-        Inside, we have another absolutely-positioned DIV which contains the text (#titlecontent).
-        The top is set to 100% to ensure it starts off-screen then uses CSS3 animation to move it
-        upward over time. No JavaScript is required.
-      </p>
-
-      <p>
-        You will probably need to adjust the movement amount and timing depending on the quantity of
-        text you want to show. The 3D depth can also be tweaked in the #titles declaration.
-      </p>
-
-      <p>All the code is contained in this single HTML file&hellip;</p>
-
-      <p class="center">View the source, Luke!</p>
-
-      <p>Sorry. Couldn't resist it.</p>
-
-      <p>
-        You're welcome to use this demonstration code in your own sites. Please link back to the
-        original article at:
-      </p>
-
-      <p class="center">
-        <a href="http://www.sitepoint.com/css3-starwars-scrolling-text/"
-          >sitepoint.com/<br />css3-starwars-scrolling-text/</a
-        >
-      </p>
-
-      <p>
-        and give me a shout on Twitter
-        <a href="https://twitter.com/craigbuckler">@craigbuckler</a> &ndash; I'd love to see how you
-        use and abuse it!
-      </p>
-
-      <p>
-        Finally, Han shot first and the original, unadulterated movies remain the best. Stop
-        fiddling with them, George!
+        O cadastro é bem simples e tá aqui do seu ladinho, na mão, não precisa nem de força uai!
       </p>
     </div>
   </div>
@@ -323,11 +283,11 @@ h1 sub {
 #titlecontent {
   position: absolute;
   top: 100%;
-  -webkit-animation: scroll 100s linear 7s infinite;
-  -moz-animation: scroll 100s linear 7s infinite;
-  -ms-animation: scroll 100s linear 7s infinite;
-  -o-animation: scroll 100s linear 7s infinite;
-  animation: scroll 100s linear 7s infinite;
+  -webkit-animation: scroll 40s linear 7s infinite;
+  -moz-animation: scroll 40s linear 7s infinite;
+  -ms-animation: scroll 40s linear 7s infinite;
+  -o-animation: scroll 40s linear 7s infinite;
+  animation: scroll 40s linear 7s infinite;
 }
 
 /* animation */
@@ -336,7 +296,7 @@ h1 sub {
     top: 100%;
   }
   100% {
-    top: -170%;
+    top: -20%;
   }
 }
 
@@ -345,7 +305,7 @@ h1 sub {
     top: 100%;
   }
   100% {
-    top: -170%;
+    top: -20%;
   }
 }
 
@@ -354,7 +314,7 @@ h1 sub {
     top: 100%;
   }
   100% {
-    top: -170%;
+    top: -20%;
   }
 }
 
@@ -363,7 +323,7 @@ h1 sub {
     top: 100%;
   }
   100% {
-    top: -170%;
+    top: -20%;
   }
 }
 
@@ -372,7 +332,7 @@ h1 sub {
     top: 100%;
   }
   100% {
-    top: -170%;
+    top: -20%;
   }
 }
 </style>
