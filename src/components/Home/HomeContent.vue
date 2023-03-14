@@ -6,7 +6,7 @@ import type { Ref } from 'vue'
 import type { Collection, CollectionDataType } from './types'
 import { collectionsToFetch, collectionsNames } from './config'
 
-import PanelNav from './PanelNav.vue'
+import PanelNav from './HomeNav.vue'
 import ButtonItem from './ButtonItem.vue'
 import FilmsCard from './Cards/FilmsCard.vue'
 import PeopleCard from './Cards/PeopleCard.vue'

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import InfoAndAuth from '../components/InfoAndAuth/InfoAndAuth.vue'
+import HomeContent from '@/components/Home/HomeContent.vue'
 </script>
 
 <template>
   <main>
-    <InfoAndAuth />
+    <HomeContent />
   </main>
 </template>

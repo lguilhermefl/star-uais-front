@@ -1,9 +1,14 @@
+<script setup lang="ts">
+import { RouterLink } from 'vue-router'
+</script>
 <template>
   <header>
-    <img alt="Star Uais logo" class="logo" src="@/assets/logo.svg" />
-    <div>
-      <h1 class="heading">Pensa num trem bão cheio de informações para os fãs de Star Wars!</h1>
-    </div>
+    <RouterLink to="/home">
+      <img alt="Star Uais logo" class="logo" src="@/assets/logo.svg" />
+      <div>
+        <h1 class="heading">Pensa num trem bão cheio de informações para os fãs de Star Wars!</h1>
+      </div>
+    </RouterLink>
   </header>
 </template>
 
