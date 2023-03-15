@@ -39,6 +39,17 @@ const getCollectionInfo = (collection: Collection) => {
 
 <template>
   <div class="container">
+    <div class="info">
+      <span
+        >Quer saber quem já usou ou está usando nossa aplicação?
+        <RouterLink to="/users" class="btn-users">Clique aqui</RouterLink> e confira a lista de
+        usuários!</span
+      >
+      <span
+        >Para ver as informações de determinado tópico é só clicar nele e aguardar o
+        carregamento.</span
+      >
+    </div>
     <PanelNav>
       <ButtonItem
         v-for="(collection, index) in collectionsToFetch"
@@ -137,14 +148,23 @@ const getCollectionInfo = (collection: Collection) => {
   align-items: center;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: large;
+  color: #b5b5b5;
 }
 
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
+.btn-users {
+  color: #44a1b3;
+  background-color: transparent;
+  border: none;
+  font-size: large;
+  padding: 0 5px;
+  font-family: 'Pathway Gothic One', Ubuntu, sans-serif;
+  font-weight: 600;
 }
 
 .cards {
