@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import SignInForm from './AuthFormItems/SignInForm.vue'
-import SignUpForm from './AuthFormItems/SignUpForm.vue'
+import SignInForm from './AuthForm/SignInForm.vue'
+import SignUpForm from './AuthForm/SignUpForm.vue'
 import { ref } from 'vue'
 
 const showSignIn = ref(true)

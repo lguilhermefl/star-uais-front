@@ -17,6 +17,11 @@ const router = createRouter({
       component: () => import('../views/HomeView.vue')
     },
     {
+      path: '/users',
+      name: 'Users',
+      component: () => import('../views/UsersView.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
       component: () => import('../views/NotFoundView.vue')
@@ -25,7 +30,7 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to, _, next) => {
-  const protectedRouteNames = ['Home', 'NotFound']
+  const protectedRouteNames = ['Home', 'Users', 'NotFound']
   const unprotectedRouteNames = ['Landing']
   const toRouteName = to.name?.toString()
   if (toRouteName) {
