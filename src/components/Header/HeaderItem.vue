@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import UserInfo from './UserInfo.vue'
 </script>
 <template>
   <header>
@@ -9,6 +10,7 @@ import { RouterLink } from 'vue-router'
     <div>
       <h1 class="heading">Pensa num trem bão cheio de informações para os fãs de Star Wars!</h1>
     </div>
+    <UserInfo />
   </header>
 </template>
 
