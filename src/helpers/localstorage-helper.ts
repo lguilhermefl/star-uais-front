@@ -2,8 +2,10 @@ import * as cryptoJs from 'crypto-js'
 
 const secret = import.meta.env.VITE_CRYPTOJS_SECRET
 
+// 15 min for expiration
+const accessTokenExpiryDuration = 15 * 60 * 1000
 // 7 days for expiration
-const expiryDuration = 7 * 24 * 60 * 60 * 1000
+const refreshTokenExpiryDuration = 7 * 24 * 60 * 60 * 1000
 
 const encrypt = (data: any) => {
   if (data != null) {
@@ -15,8 +17,8 @@ const encrypt = (data: any) => {
 const decrypt = (ciphertext: any) => {
   try {
     if (ciphertext != null && ciphertext !== 'null') {
-      const bytes = CryptoJS.AES.decrypt(ciphertext.toString(), secret)
-      const decrypted = bytes.toString(CryptoJS.enc.Utf8)
+      const bytes = cryptoJs.AES.decrypt(ciphertext.toString(), secret)
+      const decrypted = bytes.toString(cryptoJs.enc.Utf8)
       return JSON.parse(decrypted)
     }
     return null
@@ -25,15 +27,22 @@ const decrypt = (ciphertext: any) => {
   }
 }
 
-const store = (key: any, value: any) => {
+const store = (key: string, value: any) => {
   return localStorage.setItem(key, value)
 }
 
-const read = (key: any) => {
+const read = (key: string) => {
   return localStorage.getItem(key)
 }
 
-const getExpiry = () => {
+const remove = (key: string) => {
+  return localStorage.removeItem(key)
+}
+
+const getExpiry = (key: string) => {
+  let expiryDuration = 0
+  if (key === 'access_token') expiryDuration = accessTokenExpiryDuration
+  if (key === 'refresh_token') expiryDuration = refreshTokenExpiryDuration
   return new Date().getTime() + expiryDuration
 }
 
@@ -41,16 +50,16 @@ const isExpired = (expiry: any) => {
   return new Date().getTime() > parseInt(expiry, 10)
 }
 
-const storeExpiry = (key: any, value: any, expiry = false) => {
+const storeExpiry = (key: string, value: any, expiry = false) => {
   const encryptedData = encrypt(value)
-  if (expiry) {
-    const encryptedExpiry = encrypt(getExpiry())
+  if (expiry === true) {
+    const encryptedExpiry = encrypt(getExpiry(value))
     store(`${key}.e`, encryptedExpiry)
   }
   return store(key, encryptedData)
 }
 
-const readExpiry = (key: any) => {
+const readExpiry = (key: string) => {
   const expiryData = decrypt(read(`${key}.e`))
   const data = decrypt(read(key))
   if (data != null) {
@@ -69,4 +78,4 @@ const clear = () => {
   return null
 }
 
-export { encrypt, decrypt, clear, storeExpiry, readExpiry, read, store }
+export { encrypt, decrypt, clear, storeExpiry, readExpiry, read, store, remove }
