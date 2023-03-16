@@ -1,5 +1,5 @@
 <template>
-  <audio src="/src/assets/star-wars-theme.ogg" autoplay loop autobuffer></audio>
+  <audio src="/src/assets/star-wars-theme.ogg" autoplay loop controls></audio>
 
   <p id="start">Há pouco tempo, num site mineiro bem perto&hellip;</p>
 
