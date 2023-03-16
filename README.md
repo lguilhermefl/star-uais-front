@@ -1,31 +1,28 @@
-# star-uais-front
+# Star Uais Front-end
 
-This template should help get you started developing with Vue 3 in Vite.
+This is the front-end that uses [Star Uais API project](https://github.com/lguilhermefl/star-uais-api)
 
-## Recommended IDE Setup
+## Getting started
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+First, clone the repository and install the dependencies.
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
+```bash
+git git@github.com:lguilhermefl/star-uais-front.git
+cd star-uais-front
 npm install
 ```
+
+You'll need to create a `.env` with the following variables:
+
+```bash
+VITE_GOOGLE_CLIENT_ID=
+VITE_CRYPTOJS_SECRET=
+VITE_API_URL=
+```
+
+To get your Google client id you'll need to create a project at [https://console.cloud.google.com/projectcreate](https://console.cloud.google.com/projectcreate) and allow this application to use it by authorizing it's url request, in this case the default is `http://localhost:5173`.
+
+## Running the app
 
 ### Compile and Hot-Reload for Development
 
@@ -37,32 +34,4 @@ npm run dev
 
 ```sh
 npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
