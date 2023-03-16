@@ -1,5 +1,9 @@
 <template>
-  <audio src="/src/assets/star-wars-theme.ogg" autoplay loop controls></audio>
+  <audio autoplay loop>
+    <source src="https://dl.sndup.net/jnrv/star-wars-theme.ogg" type="audio/ogg" />
+    <source src="https://dl.sndup.net/jnrv/star-wars-theme.mp3" type="audio/mpeg" />
+    Seu navegador não suporta o elemento de <code>audio</code>.
+  </audio>
 
   <p id="start">Há pouco tempo, num site mineiro bem perto&hellip;</p>
 
