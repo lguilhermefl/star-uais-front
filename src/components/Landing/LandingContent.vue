@@ -32,7 +32,7 @@ import ScrollingInfo from './ScrollingInfo.vue'
   font-weight: 700;
   color: var(--vt-c-yellow-soft);
   overflow: hidden;
-  background-image: url('./src/assets/background.png');
+  background-image: url('/src/assets/background.png');
 }
 
 .auth-form {

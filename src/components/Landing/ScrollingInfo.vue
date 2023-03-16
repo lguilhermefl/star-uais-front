@@ -1,7 +1,5 @@
 <template>
-  <audio autoplay loop>
-    <source src="/src/assets/star-wars-theme.ogg" type='audio/ogg; codecs="vorbis"' />
-  </audio>
+  <audio src="/src/assets/star-wars-theme.ogg" autoplay loop autobuffer></audio>
 
   <p id="start">Há pouco tempo, num site mineiro bem perto&hellip;</p>
 
