@@ -120,10 +120,13 @@ const removeUserInfoFromLocalStorage = () => {
 }
 
 const handleError = (error: any, isLoading?: Ref<boolean>) => {
-  const { status, data } = error.response
-  const authErrorMessage = getAuthErrorMessage(status, data.message)
   if (isLoading) isLoading.value = false
-  console.log(error)
-  if (authErrorMessage) return alert(authErrorMessage.alertMessage)
+  if (error.response) {
+    const { status, data } = error.response
+    const authErrorMessage = getAuthErrorMessage(status, data.message)
+    console.log(error)
+    if (authErrorMessage) return alert(authErrorMessage.alertMessage)
+    alert(defaultErrorMessage)
+  }
   alert(defaultErrorMessage)
 }
