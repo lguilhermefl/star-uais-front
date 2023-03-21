@@ -20,7 +20,7 @@ VITE_CRYPTOJS_SECRET=
 VITE_API_URL=
 ```
 
-To get your Google client id you'll need to create a project at [https://console.cloud.google.com/projectcreate](https://console.cloud.google.com/projectcreate) and allow this application to use it by authorizing it's url request, in this case the default is `http://localhost:5173`.
+To get your Google client id you'll need to create a project at [https://console.cloud.google.com/projectcreate](https://console.cloud.google.com/projectcreate) and allow this application to use it by authorizing it's url request, in this case the default is `http://localhost:5173` and `http://localhost` for "Authorized JavaScript origins" in Google's API.
 
 ## Running the app
 
