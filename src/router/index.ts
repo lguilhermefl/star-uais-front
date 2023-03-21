@@ -35,8 +35,8 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to, _, next) => {
-  const protectedRouteNames = ['Home', 'Users']
-  const unprotectedRouteNames = ['Landing', 'NotFound']
+  const protectedRouteNames = ['Home', 'Users', 'NotFound']
+  const unprotectedRouteNames = ['Landing']
   const toRouteName = to.name?.toString()
   if (toRouteName) {
     // For Protected Routes
